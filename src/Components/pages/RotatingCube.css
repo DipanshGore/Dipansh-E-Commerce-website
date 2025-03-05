@@ -1,0 +1,37 @@
+@keyframes rotateCube {
+    from {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+      transform: rotateX(360deg) rotateY(360deg);
+    }
+  }
+  
+  .cube-container {
+    perspective: 1200px;
+  }
+  
+  .cube {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 4s ease-in-out infinite;
+  }
+  
+  .face {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4a90e2, #9333ea);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  }
+  
+  .front { transform: translateZ(40px); }
+  .back { transform: rotateY(180deg) translateZ(40px); }
+  .left { transform: rotateY(-90deg) translateZ(40px); }
+  .right { transform: rotateY(90deg) translateZ(40px); }
+  .top { transform: rotateX(90deg) translateZ(40px); }
+  .bottom { transform: rotateX(-90deg) translateZ(40px); }
+  
